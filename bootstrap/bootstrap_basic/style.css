@@ -1,0 +1,10 @@
+/*  index.html에서 bootstrap css 파일보다 style.css 를 밑에 선언해주었기 때문에 
+이 파일의 내용이 index.html에 반영된다. 원래 btn-danger 색은 bootstrap에서 red color이지만
+여기서 orange라고 선언해주었기 때문에 btn-danger color는 orange가 된다 */
+.btn-danger {
+    background-color: orange;
+}
+
+.btn-danger:hober {
+    background-color: black;
+}
