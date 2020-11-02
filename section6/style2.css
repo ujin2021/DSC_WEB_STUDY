@@ -1,0 +1,20 @@
+p {
+    color: blue;
+}
+
+.boxmodel {
+    border: 5px solid red;
+    display: inline-block;
+    padding: 5px 20px; /*top left bottom right 내부공간. 5px 20px 5px 20px 와 표현이같음*/
+    margin: 0px 20px ; /*외부공간*/
+    width: 33px; /*글자위치*/
+    height: 55px; 
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    font-size: 5em;
+}

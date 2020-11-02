@@ -1,0 +1,65 @@
+/* Selector {
+    Property: value;
+} 
+css 는 cascade(계단식) 맨밑에 정의한게 적용된다.
+부모부터 먼저 정의한다.
+*는 모든 element
+h2 p {} : h2안의 모든 p태그를 설정하는것.
+h2 > p : h2가 p의 부모이면 설정하는것
+h2 + p : p태그가 h2바로 뒤에 있어야 함.
+:hover : 
+*/
+
+* {
+    text-align: right;
+}
+
+body{
+    background-image: url(http://13.124.208.47:8000/media/2020/10/11/2020-10-11-03-17-40.jpg);
+    background-size: cover;
+}
+
+h2, p {
+    color: #AA4139;
+    text-align: center;
+    border: 5px solid rgb(255, 176, 170, 0.5);
+    cursor: pointer;
+}
+
+p {
+    line-height: 20px;
+    font-style: inherit;
+    font-weight: bold;
+    font-size: 80%;
+    font-family: Georgia;
+}
+
+p {
+    color: green;
+}
+
+img {
+    float: left;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.webtext:last-child{
+    border: 5px dashed green;
+}
+
+.active {
+    color: red;
+}
+
+#div1 {
+    background: rgba(0, 0, 255, 0.3)
+}
+
+#div2 {
+    background: rgba(255, 0, 0, 0.2)
+}
+
