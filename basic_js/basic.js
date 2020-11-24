@@ -1,5 +1,6 @@
 // js는 f12 -> console 탭에서도 실행해 볼 수 있다
-// JAVASCRIPT TYPES
+
+/* JAVASCRIPT TYPES */
 // 1. Number
 console.log(1 + 1)
 console.log(2 - 1)
@@ -55,8 +56,16 @@ emptyObj.name = 'Andy'
 // console.log(nullObj)
 console.log(emptyObj)
 
-// JAVASCRIPT CONDITIONALS
+// 6. Symbol
+let sym1 = Symbol()
+let sym2 = Symbol('foo')
+let sym3 = Symbol('foo')
+console.log(sym2 === sym3) //false
 
+
+/* JAVASCRIPT CONDITIONALS */
+
+// 1. if / else
 let name = 'Billy'
 // name = 'Suzy'
 
@@ -68,7 +77,37 @@ if (name === 'Billy') {
     console.log('I don\'t know you')
 }
 
-// JAVASCRIPT LOGICAL OPERATORS
+// 2. condition ? expr1 : expr2
+function isUserValid(bool) {
+    return bool
+}
+
+let answer = isUserValid(true) ? "You may enter" : "Access Denied" // true이면 'You may enter', false면 'Access Denied'
+let automatedAnswer = "Your account # is" + ( isUserValid(false) ? "1234" : "not available" ) // Your account # is not available
+
+// 3. SWITCH
+function moveCommand(direction) {
+    let whatHappens
+    switch (direction) {
+        case 'forward': // if direction == forward
+            whatHappens = 'you encounter a monster'
+            break;
+        case 'back': // if direction == back
+            whatHappens = 'you arrived home'
+            break;
+        case 'right': // if direction == right
+            whatHappens = 'you found a river'
+            break;
+        case 'left': // if direction == left
+            whatHappens = 'you run into a troll'
+            break;
+        default:
+            whatHappens = 'please enter a valid direction'
+    }
+    return whatHappens
+}
+
+/* JAVASCRIPT LOGICAL OPERATORS */
 
 name = 'Billy' // 위에서 이미 let name으로 name을 정의했기 때문에 다시 let name을 쓰면 안된다
 
@@ -89,7 +128,7 @@ if (!(lastName === 'Smith')) {
     console.log('This is not Smith')
 }
 
-// FUNCTION
+/* FUNCTION */
 
 function sayHello() { // function name is sayHello
     console.log('Hello!')
@@ -147,9 +186,17 @@ console.log(multiply(5, 40)) // That's too hard
 // parameters : like 4, 5
 // arguments :  like a, b
 
+// arrow function
+function add(a, b) {
+    return a + b
+}
+
+const add2 = (a, b) => a + b // 내용이 한줄이면 바로 쓸 수 있다
+
+
 // JAVASCRIPT DATA STRUCTURE
 
-// Array
+/* Array */
 let list = ['tiger', 'cat', 'bear', 'bird']
 console.log(list[0])
 
@@ -185,7 +232,7 @@ let myNewList = myList.concat(['monkey'])
 console.log(myList)
 console.log(myNewList)
 
-// Object
+/* Object */
 let user = {
     name : 'john',
     age : 34, 
@@ -227,7 +274,7 @@ console.log(user.shout())
 
 console.log(console) // console도 object이다. object안에 여러 함수가 있음
 
-// JAVASCRIPT LOOPING
+/* JAVASCRIPT LOOPING */
 
 // 1. for
 let todos = [
@@ -309,3 +356,49 @@ var todosImportant = [
     'eat healthy!'
 ]
 todosImportant.forEach(logTodos)
+
+/* SCOPE */
+
+let b = 'hi'
+
+function bb() {
+    let b = 'hello'
+    console.log(b) // hi
+}
+
+/*
+console.log(b) hi
+bb() undefined
+console.log(b) hello
+*/
+
+let fun = 5 // root scrope
+
+function funFunction() {
+    let fun = 'Hello'
+    console.log(1, fun)
+}
+
+// funFuction() 1 Hello
+// console.log(fun) 5
+
+function funerFunction() {
+    let fun = 'Bye'
+    console.log(2, fun)
+}
+
+// funFuction() 2 Bye
+// console.log(fun) 5
+
+function funestFunction() {
+    fun = 'Ahhhh'
+    console.log(3, fun)
+}
+
+function funestFunction2() {
+    // child scope
+    console.log(4, fun) //  fun이 어디있나 -> root scope에서 찾아본다
+}
+
+// funFuction() 3 Ahhhh
+// console.log(fun) Ahhhh
