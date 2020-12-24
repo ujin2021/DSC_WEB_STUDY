@@ -5,7 +5,7 @@
 3. \> npm install live-server
 4. \> live-server
 
-### NPN lodash 사용하기
+### NPM lodash 사용하기
 
 1. \> npm install ladash
 2. \> node_module이라는 dir이 생성된다
@@ -46,7 +46,7 @@ console.log('answer', _.without(array, 3)) // array에서 3을 없앤다
 14. live-server후 f12를 클릭해 console을 확인하면 3이 사라진 array가 출력된다
 15. 하지만 bundle.js는 방대하다(모든 라이브러리가 포함되어있다)
 
-### npm
+### package.json
 1. 만약 사용자가 node_modules dir를 지워도 npm install 하면 package.json에 있는 것이 다시 install 된다
 2. dependency 말고 dev dependency가 있는데, 이것은 개발과 테스트에만 사용되고, release될 때는 삭제된다
 3. \> npm run test 실행시 package.json파일의 scripts의 test가 출력됨
